@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>NOVA CASA ADM LIVE</title>
+</head>
+<body>
+    <div class="header">
+        <h1>
+            NOVA CASA<img src="nova_casa.png" class="logo">ADM LIVE
+        </h1>
+    </div>
+
+    <div class="container">
+        <div class="form-container" id="login-form">
+            <img class="logo " src="login.png">
+            <h2>Bem-vindo de volta!</h2>
+            <p class="subtitle">Entre com suas credenciais para acessar</p>
+            
+            <form id="loginForm">
+                <div class="input-group">
+                    <i class="bi bi-envelope"></i>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="seu@email.com" required />
+                </div>
+
+                <div class="input-group">
+                    <i class="bi bi-lock"></i>
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" placeholder="••••••••" required>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <i class="bi bi-box-arrow-in-right"></i>
+                    <span class="button-text">Entrar</span>
+                </button>
+            </form>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>    
+    <script src="script.js"></script>
+</body>
+</html>
