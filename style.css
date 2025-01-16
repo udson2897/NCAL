@@ -213,7 +213,7 @@ cursor: pointer;
 transition: background-color 0.3s;
 }
 button:hover {
-background-color: #0056b3;
+background-color: rgb(80, 197, 34);
 }
 
 
