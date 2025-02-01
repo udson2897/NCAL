@@ -6,24 +6,7 @@
     <title>Tabela de Requisições</title>
     <link rel="stylesheet" href="att.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <style>
-        .highlight-urgent {
-            background-color: #ffa3a3 !important;
-        }
-        .highlight-concluded {
-            background-color: #55e750 !important;
-        }
-        .highlight-quotation {
-            background-color: #e2d40b !important;
-        }
-        .highlight-cancelled {
-            background-color: #000000 !important;
-            color: #ffffff !important;
-        }
-        .highlight-sent {
-            background-color: #adb1e6 !important;
-        }
-    </style>
+    
 </head>
 <body>
     <div class="header">
@@ -43,9 +26,18 @@
     </div>
 
     <h1>Tabela de Requisições</h1>
+    <div class="filter-section">
+        <h3>Filtrar por Status</h3>
+        <label><input type="checkbox" value="em cotação" class="status-filter"> Em Cotação</label>
+        <label><input type="checkbox" value="concluída" class="status-filter"> Concluída</label>
+        <label><input type="checkbox" value="cancelada" class="status-filter"> Cancelada</label>
+        <label><input type="checkbox" value="pedido enviado" class="status-filter"> Pedido Enviado</label>
+        <label><input type="checkbox" value="vazio" class="status-filter"> Status Vazio</label>
+    </div>
     <div class="controls">
         <input type="text" id="search" placeholder="Filtrar por palavra-chave">
     </div>
+    
     <div id="tabela-container">
         <!-- A tabela será gerada aqui pelo JavaScript -->
     </div>
@@ -219,18 +211,25 @@
 
         function filterTable() {
             const searchTerm = normalizeText(document.getElementById("search").value);
+            const selectedStatuses = Array.from(document.querySelectorAll(".status-filter:checked")).map(checkbox => normalizeText(checkbox.value));
+
             const filteredData = tableData.filter(row => {
                 if (!isNaN(searchTerm) && searchTerm !== "") {
                     return row.id.toString() === searchTerm;
                 }
-                return Object.values(row).some(value => 
-                    value && normalizeText(value).includes(searchTerm)
-                );
+
+                const matchesStatus = selectedStatuses.length === 0 || selectedStatuses.includes(normalizeText(row.status_requisicao)) || (selectedStatuses.includes("vazio") && normalizeText(row.status_requisicao) === "");
+                const matchesSearch = Object.values(row).some(value => value && normalizeText(value).includes(searchTerm));
+
+                return matchesStatus && matchesSearch;
             });
             renderTable(filteredData);
         }
 
         document.getElementById("search").addEventListener("input", filterTable);
+        document.querySelectorAll(".status-filter").forEach(checkbox => {
+            checkbox.addEventListener("change", filterTable);
+        });
 
         fetch(CONFIG.apiUrl, { headers: CONFIG.headers })
             .then(response => response.json())
@@ -248,3 +247,4 @@
     <script src="logof.js"></script>
 </body>
 </html>
+
