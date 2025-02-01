@@ -172,6 +172,23 @@ h1 {
     .logout-btn:hover {
         background-color: rgb(125, 199, 96);
     }
+
+.highlight-urgent {
+        background-color: #ffa3a3 !important;
+    }
+    .highlight-concluded {
+        background-color: #36dd36 !important;
+    }
+    .highlight-quotation {
+        background-color: #fdfd1a !important;
+    }
+    .highlight-cancelled {
+        background-color: #000000 !important;
+        color: #ffffff !important;
+    }
+    .highlight-sent {
+        background-color: #08769b !important;
+    }
     
 
     
