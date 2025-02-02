@@ -185,6 +185,8 @@ box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 .form-group {
 margin-bottom: 20px;
+background-color: rgb(190, 188, 188);
+padding: 15px;    
 }
 label {
 display: block;
