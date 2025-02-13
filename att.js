@@ -77,6 +77,30 @@
                 return (statusOrder[statusA] || 6) - (statusOrder[statusB] || 6);
             });
         }
+        function deleteRow(rowIndex) {
+            const row = tableData[rowIndex];
+            if (!confirm("Tem certeza que deseja excluir esta requisição?")) return;
+        
+            fetch(`${CONFIG.apiUrl}?id=eq.${row.id}`, {
+                method: "DELETE",
+                headers: CONFIG.headers
+            })
+            .then(response => {
+                if (response.ok) {
+                    tableData.splice(rowIndex, 1);
+                    renderTable();
+                    alert("Requisição excluída com sucesso!");
+                } else {
+                    return response.text().then(text => {
+                        throw new Error(`Erro do servidor: ${text}`);
+                    });
+                }
+            })
+            .catch(error => {
+                alert(`Erro ao excluir a requisição: ${error.message}`);
+            });
+        }
+        
 
         function generateTableHTML(data) {
             if (!data.length) return '<p>Nenhum dado encontrado</p>';
@@ -120,23 +144,25 @@
                 return `
                     <tr class="${getRowClass(row)}" data-index="${rowIndex}">
                         ${cells}
-                        <td><button onclick="saveRow(${rowIndex})">Salvar</button></td>
+                        <td><button onclick="saveRow(${rowIndex})">Salvar</button>&#160<button onclick="deleteRow(${rowIndex})" style="background-color: red; color: white;">Excluir</button></td>
+                        
                     </tr>
                 `;
             }).join('');
 
             return `
-                <table>
-                    <thead>
-                        <tr>
-                            ${headers.map(h => `<th>${h}</th>`).join('')}
-                            <th>Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody>${rows}</tbody>
-                </table>
-            `;
-        }
+            <table>
+                <thead>
+                    <tr>
+                        ${headers.map(h => `<th>${h}</th>`).join('')}
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>${rows}</tbody>
+            </table>
+        `;
+    }
+    
 
         function renderTable(data = tableData) {
             const sortedData = sortTableData(data);
