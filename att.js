@@ -101,6 +101,7 @@
             });
         }
         
+       
 
         function generateTableHTML(data) {
             if (!data.length) return '<p>Nenhum dado encontrado</p>';
@@ -111,7 +112,7 @@
                     if (header === "status_requisicao") {
                         return `<td>
                             <select onchange="updateValue(${rowIndex}, '${header}', this.value)">
-                                <option value="" ${row[header] === "" ? "selected" : ""}></option>
+                                <option value="agd cotação" ${normalizeText(row[header])  === "agd cotação" ? "selected" : ""}>Agd cotação</option>
                                 <option value="em cotação" ${normalizeText(row[header]) === "em cotação" ? "selected" : ""}>Em cotação</option>
                                 <option value="concluída" ${normalizeText(row[header]) === "concluída" ? "selected" : ""}>Concluída</option>
                                 <option value="cancelada" ${normalizeText(row[header]) === "cancelada" ? "selected" : ""}>Cancelada</option>
@@ -144,7 +145,9 @@
                 return `
                     <tr class="${getRowClass(row)}" data-index="${rowIndex}">
                         ${cells}
-                        <td><button onclick="saveRow(${rowIndex})">Salvar</button>&#160<button onclick="deleteRow(${rowIndex})" style="background-color: red; color: white;">Excluir</button></td>
+                        <td>
+                        
+                        <button onclick="saveRow(${rowIndex})" style="border-radius: 15px; margin: 3px;">Salvar</button><button onclick="deleteRow(${rowIndex})" style="background-color: red; color: white; border-radius: 15px; margin: 3px;">Excluir</button></td>
                         
                     </tr>
                 `;
