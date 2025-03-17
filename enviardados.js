@@ -45,6 +45,7 @@ form.addEventListener('submit', async (event) => {
     tipo_requisicao: formData.get('tipo_requisicao'),
     descricao: descricaoTexto || null, // Garantindo que o campo seja enviado corretamente
     filial: formData.get('filial'),
+    comprador: formData.get('comprador'),
     solicitante: formData.get('solicitante'),
     cargo: formData.get('cargo'),
     urgente: formData.get('urgente'),
