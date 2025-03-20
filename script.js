@@ -1,40 +1,45 @@
+// Adiciona um ouvinte de evento ao formulário de login para capturar o envio
 document.getElementById('loginForm').addEventListener('submit', async (e) => {
-    e.preventDefault()
+    e.preventDefault() // Evita o recarregamento da página ao enviar o formulário
     
-    // Get form values
+    // Obtém os valores do e-mail e da senha inseridos no formulário
     const email = document.getElementById('email').value
     const password = document.getElementById('password').value
     
     try {
-        // Show loading state
+        // Altera o botão de envio para um estado de carregamento
         const submitBtn = document.querySelector('.submit-btn')
-        const originalBtnText = submitBtn.innerHTML
-        submitBtn.innerHTML = '<i class="bi bi-arrow-repeat"></i> Entrando...'
-        submitBtn.disabled = true
-        // Attempt to sign in
+        const originalBtnText = submitBtn.innerHTML // Armazena o texto original do botão
+        submitBtn.innerHTML = '<i class="bi bi-arrow-repeat"></i> Entrando...' // Ícone de carregamento
+        submitBtn.disabled = true // Desativa o botão para evitar múltiplos cliques
+
+        // Tenta autenticar o usuário utilizando Supabase
         const { data, error } = await supabase.auth.signInWithPassword({
             email: email,
             password: password
         })
-        if (error) throw error
-        // Success - redirect to dashboard or home page
+
+        if (error) throw error // Se houver erro, ele é lançado e tratado no catch
+        
+        // Se o login for bem-sucedido, redireciona o usuário para a página inicial
         window.location.href = 'pagina_inicial.html'
     } catch (error) {
-        // Handle errors
+        // Exibe um alerta caso ocorra erro no login
         alert('Erro ao fazer login: ' + error.message)
         
-        // Reset button state
+        // Reseta o botão para seu estado original
         const submitBtn = document.querySelector('.submit-btn')
         submitBtn.innerHTML = originalBtnText
         submitBtn.disabled = false
     }
 })
-// Check if user is already logged in
+
+// Verifica se o usuário já está autenticado ao carregar a página
 window.addEventListener('DOMContentLoaded', async () => {
     const { data: { session }, error } = await supabase.auth.getSession()
     
     if (session) {
-        // User is already logged in, redirect to dashboard
+        // Se já estiver logado, redireciona para a página inicial
         window.location.href = 'pagina_inicial.html'
     }
 })
