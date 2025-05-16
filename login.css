@@ -1,0 +1,146 @@
+.header {
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+    background-color: rgb(68, 151, 36);
+    height: 130px;
+    margin: 10px;
+}
+
+.header h1 {
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    
+}
+
+.header img {
+    vertical-align: middle;
+    width: 90px;
+    padding-bottom: 10px;
+}
+
+/* New styles for the login form */
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #f0f9f0, #e8f5e8);
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    
+}
+
+.form-container {
+    background: rgb(202, 196, 196);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.form-container h2 {
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.input-group i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 2.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: rgb(68, 151, 36);
+    box-shadow: 0 0 0 2px rgba(68, 151, 36, 0.2);
+}
+
+.submit-btn {
+    width: 50%;
+    padding: 0.8rem;
+    background-color: rgb(68, 151, 36);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s ease;
+    margin-left: 80px;
+}
+
+.submit-btn:hover {
+    background-color: rgb(56, 125, 30);
+}
+
+.toggle-form {
+    margin-top: 1.5rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.toggle-form a {
+    color: rgb(68, 151, 36);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.toggle-form a:hover {
+    text-decoration: underline;
+}
+
+.hidden {
+    display: none;
+}
+
+img{
+width: 160px;
+}
+label{
+    font-weight: bold;
+}
+i{
+    margin-top: 10px;
+}
+
+#footer p{
+    font-size: 11px;
+
+}
+#footer a{
+    text-decoration: none;
+    
+}
