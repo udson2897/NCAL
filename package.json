@@ -1,0 +1,13 @@
+{
+  "name": "nova-casa-adm-live",
+  "version": "1.0.0",
+  "description": "Sistema web para requisições de materiais Nova Casa",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 -m http.server 3000",
+    "start": "python3 -m http.server 3000"
+  },
+  "keywords": ["html", "css", "javascript", "supabase"],
+  "author": "Code and Solutions",
+  "license": "MIT"
+}
