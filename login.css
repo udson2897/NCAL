@@ -1,39 +1,54 @@
+/* Base styles and reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(to bottom, #f0f9f0, #e8f5e8);
+    min-height: 100vh;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Header - Responsive */
 .header {
     display: flex;
     justify-content: center;
+    align-items: center;
     border-radius: 15px;
     background-color: rgb(68, 151, 36);
-    height: 130px;
+    min-height: 100px;
     margin: 10px;
+    padding: 15px;
+    text-align: center;
 }
 
 .header h1 {
     color: white;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    text-align: center;
-    
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .header img {
-    vertical-align: middle;
-    width: 90px;
-    padding-bottom: 10px;
+    width: clamp(60px, 8vw, 90px);
+    height: auto;
+    flex-shrink: 0;
 }
 
-/* New styles for the login form */
-body {
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to bottom, #f0f9f0, #e8f5e8);
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
-}
-
+/* Login container - Responsive */
 .container {
-    max-width: 400px;
+    max-width: 450px;
     margin: 2rem auto;
     padding: 0 1rem;
-    
+    width: 100%;
 }
 
 .form-container {
@@ -42,23 +57,41 @@ body {
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
+    width: 100%;
+}
+
+.form-container img {
+    width: clamp(120px, 30vw, 160px);
+    height: auto;
+    margin-bottom: 1rem;
 }
 
 .form-container h2 {
     color: #333;
     margin-bottom: 0.5rem;
-    font-size: 1.5rem;
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    font-weight: bold;
 }
 
 .subtitle {
     color: #666;
     margin-bottom: 2rem;
-    font-size: 0.9rem;
+    font-size: clamp(0.8rem, 2vw, 1rem);
 }
 
+/* Input groups - Responsive */
 .input-group {
     position: relative;
     margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
 .input-group i {
@@ -67,6 +100,8 @@ body {
     top: 50%;
     transform: translateY(-50%);
     color: #666;
+    z-index: 2;
+    margin-top: 12px;
 }
 
 .input-group input {
@@ -74,9 +109,10 @@ body {
     padding: 0.8rem 1rem 0.8rem 2.5rem;
     border: 1px solid #ddd;
     border-radius: 8px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
     box-sizing: border-box;
+    background-color: white;
 }
 
 .input-group input:focus {
@@ -85,62 +121,231 @@ body {
     box-shadow: 0 0 0 2px rgba(68, 151, 36, 0.2);
 }
 
+.input-group input::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+/* Submit button - Responsive */
 .submit-btn {
-    width: 50%;
-    padding: 0.8rem;
+    width: 60%;
+    max-width: 200px;
+    padding: 0.8rem 1rem;
     background-color: rgb(68, 151, 36);
     color: white;
     border: none;
     border-radius: 8px;
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    font-weight: bold;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    transition: background-color 0.3s ease;
-    margin-left: 80px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 0 auto;
 }
 
 .submit-btn:hover {
     background-color: rgb(56, 125, 30);
+    transform: translateY(-1px);
 }
 
-.toggle-form {
-    margin-top: 1.5rem;
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.submit-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Footer - Responsive */
+#footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
     color: #666;
-    font-size: 0.9rem;
 }
 
-.toggle-form a {
-    color: rgb(68, 151, 36);
+#footer p {
+    font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+    line-height: 1.4;
+}
+
+#footer a {
     text-decoration: none;
+    color: rgb(68, 151, 36);
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
-.toggle-form a:hover {
+#footer a:hover {
+    color: rgb(56, 125, 30);
     text-decoration: underline;
 }
 
+/* Utility classes */
 .hidden {
     display: none;
 }
 
-img{
-width: 160px;
-}
-label{
-    font-weight: bold;
-}
-i{
-    margin-top: 10px;
+.text-center {
+    text-align: center;
 }
 
-#footer p{
-    font-size: 11px;
-
+/* Loading state */
+.loading {
+    opacity: 0.7;
+    pointer-events: none;
 }
-#footer a{
-    text-decoration: none;
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+    .header {
+        min-height: 80px;
+        margin: 5px;
+        padding: 10px;
+    }
     
+    .header h1 {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .container {
+        margin: 1rem auto;
+        padding: 0 0.5rem;
+    }
+    
+    .form-container {
+        padding: 1.5rem;
+        border-radius: 8px;
+    }
+    
+    .input-group {
+        margin-bottom: 1.2rem;
+    }
+    
+    .submit-btn {
+        width: 80%;
+        max-width: none;
+    }
+    
+    #footer {
+        margin-top: 1.5rem;
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        min-height: 70px;
+        border-radius: 10px;
+        margin: 5px;
+    }
+    
+    .container {
+        margin: 0.5rem auto;
+        padding: 0 0.5rem;
+    }
+    
+    .form-container {
+        padding: 1rem;
+        border-radius: 6px;
+        margin: 0.5rem 0;
+    }
+    
+    .input-group input {
+        padding: 0.7rem 0.8rem 0.7rem 2.2rem;
+    }
+    
+    .input-group i {
+        left: 0.8rem;
+    }
+    
+    .submit-btn {
+        width: 100%;
+        padding: 1rem;
+    }
+    
+    #footer {
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .header {
+        min-height: 60px;
+        padding: 8px;
+    }
+    
+    .form-container {
+        padding: 0.8rem;
+    }
+    
+    .input-group input {
+        padding: 0.6rem 0.7rem 0.6rem 2rem;
+    }
+    
+    .input-group i {
+        left: 0.7rem;
+        font-size: 0.9em;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .header {
+        border: 2px solid white;
+    }
+    
+    .form-container {
+        border: 2px solid #333;
+    }
+    
+    .input-group input {
+        border: 2px solid #333;
+    }
+    
+    .submit-btn {
+        border: 2px solid #333;
+    }
+}
+
+/* Focus visible for better keyboard navigation */
+.submit-btn:focus-visible,
+.input-group input:focus-visible {
+    outline: 2px solid rgb(68, 151, 36);
+    outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: white;
+    }
+    
+    .header,
+    .form-container,
+    #footer {
+        box-shadow: none;
+        border: 1px solid #000;
+    }
+    
+    .submit-btn {
+        background-color: transparent;
+        color: #000;
+        border: 1px solid #000;
+    }
 }
