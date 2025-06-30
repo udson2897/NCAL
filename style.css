@@ -1,4 +1,4 @@
-/* Base styles and CSS Reset */
+/* Reset e estilos base */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -12,7 +12,7 @@ body {
     background-color: #f5f5f5;
 }
 
-/* Header - Responsive */
+/* Header responsivo */
 .header {
     display: flex;
     justify-content: center;
@@ -28,7 +28,7 @@ body {
 .header h1 {
     color: white;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-size: 2.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -37,12 +37,12 @@ body {
 }
 
 .header img {
-    width: clamp(60px, 8vw, 90px);
+    width: 90px;
     height: auto;
     flex-shrink: 0;
 }
 
-/* Navigation Menu - Responsive */
+/* Menu de navegação responsivo */
 .menu {
     margin: 10px;
     padding: 15px;
@@ -56,7 +56,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: clamp(10px, 3vw, 30px);
+    gap: 30px;
     flex-wrap: wrap;
     min-width: max-content;
 }
@@ -73,7 +73,7 @@ body {
     color: white;
     font-family: "Helvetica Neue", Arial, sans-serif;
     font-weight: bold;
-    font-size: clamp(0.8rem, 2vw, 1rem);
+    font-size: 1rem;
     border-radius: 15px;
     transition: background-color 0.3s ease;
     white-space: nowrap;
@@ -91,13 +91,13 @@ body {
     background-color: black;
 }
 
-/* Icons */
+/* Ícones */
 i {
     margin-right: 5px;
     font-size: 1em;
 }
 
-/* Main Content Areas */
+/* Áreas de conteúdo principal */
 .inicial {
     display: flex;
     justify-content: center;
@@ -111,7 +111,7 @@ i {
 
 .inicial h3 {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-size: 2.2rem;
     color: rgb(80, 197, 34);
     font-weight: bold;
     margin-bottom: 20px;
@@ -119,12 +119,12 @@ i {
 
 .inicial p {
     font-family: Helvetica, sans-serif;
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-size: 1.2rem;
     max-width: 800px;
     margin-bottom: 15px;
 }
 
-/* Form Styles - Responsive */
+/* Estilos de formulário responsivos */
 .formulario {
     text-align: center;
     padding: 0 15px;
@@ -132,7 +132,7 @@ i {
 
 .formulario h3 {
     color: rgb(83, 189, 42);
-    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-size: 1.5rem;
     margin-bottom: 20px;
 }
 
@@ -157,7 +157,7 @@ label {
     display: block;
     font-weight: bold;
     margin-bottom: 8px;
-    font-size: clamp(0.9rem, 2vw, 1rem);
+    font-size: 1rem;
 }
 
 input[type="text"],
@@ -174,7 +174,7 @@ textarea {
     border-radius: 4px;
     box-sizing: border-box;
     text-align: center;
-    font-size: clamp(0.9rem, 2vw, 1rem);
+    font-size: 1rem;
     margin: 0 auto;
     display: block;
 }
@@ -191,7 +191,7 @@ button {
     border-radius: 4px;
     background-color: #007bff;
     color: white;
-    font-size: clamp(0.9rem, 2vw, 1rem);
+    font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s;
     min-width: 120px;
@@ -201,7 +201,7 @@ button:hover {
     background-color: rgb(80, 197, 34);
 }
 
-/* List Items - Responsive */
+/* Itens de lista responsivos */
 #listaItens {
     display: flex;
     flex-direction: column;
@@ -232,7 +232,7 @@ button:hover {
     gap: 10px;
 }
 
-/* Background Image - Responsive */
+/* Imagem de fundo responsiva */
 .corpo {
     background-image: url(filial-df.jpg);
     min-height: 300px;
@@ -245,7 +245,7 @@ button:hover {
     margin: 10px;
 }
 
-/* Radio buttons and checkboxes */
+/* Botões de rádio e checkboxes */
 input[type="radio"],
 input[type="checkbox"] {
     width: auto;
@@ -253,7 +253,7 @@ input[type="checkbox"] {
     transform: scale(1.2);
 }
 
-/* Responsive breakpoints */
+/* Breakpoints responsivos */
 @media (max-width: 1200px) {
     .menu ul {
         gap: 20px;
@@ -261,6 +261,14 @@ input[type="checkbox"] {
     
     form {
         max-width: 90%;
+    }
+    
+    .header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .header img {
+        width: 80px;
     }
 }
 
@@ -272,8 +280,13 @@ input[type="checkbox"] {
     }
     
     .header h1 {
+        font-size: 1.8rem;
         flex-direction: column;
         gap: 5px;
+    }
+    
+    .header img {
+        width: 70px;
     }
     
     .menu {
@@ -291,6 +304,7 @@ input[type="checkbox"] {
     .logout-btn {
         text-align: center;
         padding: 15px;
+        font-size: 0.9rem;
     }
     
     form {
@@ -311,16 +325,30 @@ input[type="checkbox"] {
     select,
     textarea {
         max-width: 100%;
+        font-size: 0.9rem;
     }
     
     button {
         width: 100%;
         margin: 5px 0;
+        font-size: 0.9rem;
     }
     
     .inicial {
         padding: 15px;
         margin: 5px;
+    }
+    
+    .inicial h3 {
+        font-size: 1.8rem;
+    }
+    
+    .inicial p {
+        font-size: 1rem;
+    }
+    
+    .formulario h3 {
+        font-size: 1.3rem;
     }
     
     .corpo {
@@ -340,6 +368,14 @@ input[type="checkbox"] {
         border-radius: 10px;
     }
     
+    .header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .header img {
+        width: 60px;
+    }
+    
     .menu {
         border-radius: 10px;
     }
@@ -351,7 +387,7 @@ input[type="checkbox"] {
     .menu a,
     .logout-btn {
         padding: 12px;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
     
     form {
@@ -372,10 +408,31 @@ input[type="checkbox"] {
     select,
     textarea {
         padding: 10px;
+        font-size: 0.8rem;
+    }
+    
+    label {
+        font-size: 0.9rem;
+    }
+    
+    button {
+        font-size: 0.8rem;
     }
     
     .inicial {
         padding: 10px;
+    }
+    
+    .inicial h3 {
+        font-size: 1.5rem;
+    }
+    
+    .inicial p {
+        font-size: 0.9rem;
+    }
+    
+    .formulario h3 {
+        font-size: 1.1rem;
     }
     
     .corpo {
@@ -385,7 +442,35 @@ input[type="checkbox"] {
     }
 }
 
-/* Utility classes */
+@media (max-width: 320px) {
+    .header h1 {
+        font-size: 1.2rem;
+    }
+    
+    .header img {
+        width: 50px;
+    }
+    
+    .menu a,
+    .logout-btn {
+        font-size: 0.7rem;
+        padding: 10px;
+    }
+    
+    .inicial h3 {
+        font-size: 1.3rem;
+    }
+    
+    .inicial p {
+        font-size: 0.8rem;
+    }
+    
+    .formulario h3 {
+        font-size: 1rem;
+    }
+}
+
+/* Classes utilitárias */
 .text-center {
     text-align: center;
 }
@@ -394,13 +479,13 @@ input[type="checkbox"] {
     display: none;
 }
 
-/* Ensure images are responsive */
+/* Garantir que imagens sejam responsivas */
 img {
     max-width: 100%;
     height: auto;
 }
 
-/* Accessibility improvements */
+/* Melhorias de acessibilidade */
 @media (prefers-reduced-motion: reduce) {
     * {
         animation-duration: 0.01ms !important;
@@ -409,7 +494,7 @@ img {
     }
 }
 
-/* High contrast mode support */
+/* Suporte para alto contraste */
 @media (prefers-contrast: high) {
     .header {
         border: 2px solid white;

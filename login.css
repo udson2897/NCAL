@@ -1,4 +1,4 @@
-/* Base styles and reset */
+/* Reset e estilos base */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -13,7 +13,7 @@ body {
     color: #333;
 }
 
-/* Header - Responsive */
+/* Header responsivo */
 .header {
     display: flex;
     justify-content: center;
@@ -29,7 +29,7 @@ body {
 .header h1 {
     color: white;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-size: 2.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -38,12 +38,12 @@ body {
 }
 
 .header img {
-    width: clamp(60px, 8vw, 90px);
+    width: 90px;
     height: auto;
     flex-shrink: 0;
 }
 
-/* Login container - Responsive */
+/* Container de login responsivo */
 .container {
     max-width: 450px;
     margin: 2rem auto;
@@ -61,7 +61,7 @@ body {
 }
 
 .form-container img {
-    width: clamp(120px, 30vw, 160px);
+    width: 160px;
     height: auto;
     margin-bottom: 1rem;
 }
@@ -69,17 +69,17 @@ body {
 .form-container h2 {
     color: #333;
     margin-bottom: 0.5rem;
-    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    font-size: 1.8rem;
     font-weight: bold;
 }
 
 .subtitle {
     color: #666;
     margin-bottom: 2rem;
-    font-size: clamp(0.8rem, 2vw, 1rem);
+    font-size: 1rem;
 }
 
-/* Input groups - Responsive */
+/* Grupos de input responsivos */
 .input-group {
     position: relative;
     margin-bottom: 1.5rem;
@@ -91,7 +91,7 @@ body {
     font-weight: bold;
     margin-bottom: 0.5rem;
     color: #333;
-    font-size: clamp(0.9rem, 2vw, 1rem);
+    font-size: 1rem;
 }
 
 .input-group i {
@@ -109,7 +109,7 @@ body {
     padding: 0.8rem 1rem 0.8rem 2.5rem;
     border: 1px solid #ddd;
     border-radius: 8px;
-    font-size: clamp(0.9rem, 2vw, 1rem);
+    font-size: 1rem;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     box-sizing: border-box;
     background-color: white;
@@ -126,7 +126,7 @@ body {
     font-style: italic;
 }
 
-/* Submit button - Responsive */
+/* Botão de envio responsivo */
 .submit-btn {
     width: 60%;
     max-width: 200px;
@@ -135,7 +135,7 @@ body {
     color: white;
     border: none;
     border-radius: 8px;
-    font-size: clamp(0.9rem, 2vw, 1rem);
+    font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
     display: flex;
@@ -161,7 +161,7 @@ body {
     transform: none;
 }
 
-/* Footer - Responsive */
+/* Footer responsivo */
 #footer {
     text-align: center;
     margin-top: 2rem;
@@ -170,7 +170,7 @@ body {
 }
 
 #footer p {
-    font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+    font-size: 0.9rem;
     line-height: 1.4;
 }
 
@@ -186,7 +186,7 @@ body {
     text-decoration: underline;
 }
 
-/* Utility classes */
+/* Classes utilitárias */
 .hidden {
     display: none;
 }
@@ -195,13 +195,12 @@ body {
     text-align: center;
 }
 
-/* Loading state */
 .loading {
     opacity: 0.7;
     pointer-events: none;
 }
 
-/* Responsive breakpoints */
+/* Breakpoints responsivos */
 @media (max-width: 768px) {
     .header {
         min-height: 80px;
@@ -210,8 +209,13 @@ body {
     }
     
     .header h1 {
+        font-size: 2rem;
         flex-direction: column;
         gap: 5px;
+    }
+    
+    .header img {
+        width: 70px;
     }
     
     .container {
@@ -222,6 +226,14 @@ body {
     .form-container {
         padding: 1.5rem;
         border-radius: 8px;
+    }
+    
+    .form-container img {
+        width: 120px;
+    }
+    
+    .form-container h2 {
+        font-size: 1.5rem;
     }
     
     .input-group {
@@ -237,6 +249,10 @@ body {
         margin-top: 1.5rem;
         padding: 0.5rem;
     }
+    
+    #footer p {
+        font-size: 0.8rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -244,6 +260,14 @@ body {
         min-height: 70px;
         border-radius: 10px;
         margin: 5px;
+    }
+    
+    .header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .header img {
+        width: 60px;
     }
     
     .container {
@@ -257,21 +281,43 @@ body {
         margin: 0.5rem 0;
     }
     
+    .form-container img {
+        width: 100px;
+    }
+    
+    .form-container h2 {
+        font-size: 1.3rem;
+    }
+    
+    .subtitle {
+        font-size: 0.9rem;
+    }
+    
     .input-group input {
         padding: 0.7rem 0.8rem 0.7rem 2.2rem;
+        font-size: 0.9rem;
     }
     
     .input-group i {
         left: 0.8rem;
     }
     
+    .input-group label {
+        font-size: 0.9rem;
+    }
+    
     .submit-btn {
         width: 100%;
         padding: 1rem;
+        font-size: 0.9rem;
     }
     
     #footer {
         margin-top: 1rem;
+    }
+    
+    #footer p {
+        font-size: 0.7rem;
     }
 }
 
@@ -281,21 +327,50 @@ body {
         padding: 8px;
     }
     
+    .header h1 {
+        font-size: 1.2rem;
+    }
+    
+    .header img {
+        width: 50px;
+    }
+    
     .form-container {
         padding: 0.8rem;
     }
     
+    .form-container img {
+        width: 80px;
+    }
+    
+    .form-container h2 {
+        font-size: 1.1rem;
+    }
+    
+    .subtitle {
+        font-size: 0.8rem;
+    }
+    
     .input-group input {
         padding: 0.6rem 0.7rem 0.6rem 2rem;
+        font-size: 0.8rem;
     }
     
     .input-group i {
         left: 0.7rem;
         font-size: 0.9em;
     }
+    
+    .input-group label {
+        font-size: 0.8rem;
+    }
+    
+    .submit-btn {
+        font-size: 0.8rem;
+    }
 }
 
-/* Accessibility improvements */
+/* Melhorias de acessibilidade */
 @media (prefers-reduced-motion: reduce) {
     * {
         animation-duration: 0.01ms !important;
@@ -304,7 +379,7 @@ body {
     }
 }
 
-/* High contrast mode support */
+/* Suporte para alto contraste */
 @media (prefers-contrast: high) {
     .header {
         border: 2px solid white;
@@ -323,14 +398,14 @@ body {
     }
 }
 
-/* Focus visible for better keyboard navigation */
+/* Foco visível para melhor navegação por teclado */
 .submit-btn:focus-visible,
 .input-group input:focus-visible {
     outline: 2px solid rgb(68, 151, 36);
     outline-offset: 2px;
 }
 
-/* Print styles */
+/* Estilos para impressão */
 @media print {
     body {
         background: white;
