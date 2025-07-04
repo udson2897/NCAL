@@ -1,507 +1,263 @@
-/* Reset e estilos base */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+.header{
+display: flex;    
+justify-content: center;
+border-radius: 15px;
+background-color:rgb(68,151,36);
+height: 130px;
+margin: 10px;
+
+    
+
 }
 
-body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f5f5f5;
-}
 
-/* Header responsivo */
-.header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px;
-    background-color: rgb(68, 151, 36);
-    min-height: 100px;
-    margin: 10px;
-    padding: 15px;
-    text-align: center;
-}
 
-.header h1 {
-    color: white;
+.header h1{
+    color:white;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
+    text-align: center;
+   
+    
+    
 }
 
-.header img {
-    width: 90px;
-    height: auto;
-    flex-shrink: 0;
+.header img{
+    
+        vertical-align: middle; /* Alinha a imagem verticalmente ao centro do texto */
+        width: 90px; /* Ajusta a largura da imagem */
+        padding-bottom: 10px;
+        align-items: center;
+        
+    
 }
 
-/* Menu de navegação responsivo */
-.menu {
+
+
+
+.menu{
+    padding: 20px;
     margin: 10px;
-    padding: 15px;
+    padding: 10px;
     border-radius: 20px;
+    height: 45px;
     background-color: black;
-    overflow-x: auto;
+    
+    
 }
 
 .menu ul {
-    list-style: none;
-    display: flex;
+    list-style: none; /* Remove os marcadores padrão da lista */
+    margin:0;
+    padding: 0;
+    display: flex; /* Alinha os itens lado a lado */
     justify-content: center;
-    align-items: center;
     gap: 30px;
-    flex-wrap: wrap;
-    min-width: max-content;
+    
 }
 
 .menu li {
-    flex-shrink: 0;
+    margin: 0;
+    
 }
 
-.menu a,
-.logout-btn {
-    display: block;
-    padding: 12px 16px;
-    text-decoration: none;
-    color: white;
-    font-family: "Helvetica Neue", Arial, sans-serif;
+.menu a {
+    display: block; /* Garante que todo o link seja clicável */
+    padding: 15px 20px;
+    text-decoration: none; /* Remove o sublinhado */
+    color: white; /* Cor do texto */
+    font-family: "Helvetica Neue",;
     font-weight: bold;
-    font-size: 1rem;
-    border-radius: 15px;
-    transition: background-color 0.3s ease;
-    white-space: nowrap;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
 }
 
-.menu a:hover,
+.menu a:hover {
+    background-color: rgb(125, 199, 96); /* Cor de fundo ao passar o mouse */
+    border-radius: 15px;
+}
+
+.section p{
+text-align: center;
+
+}
+
+.section h2{
+    text-align: center;
+}
+
+.login{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+   
+}
+
+.inicial{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 15px;
+    
+    
+    
+
+  
+}
+
+
+
+.login input{
+    width: 35%;
+    padding: 5px;
+    border-radius: 5px;
+   
+}
+
+
+
+.formulario{
+text-align: center;
+
+}
+.formulario h3{
+    color: black;
+    font-size: 20px;
+    color:rgb(83, 189, 42) ;
+}
+
+i{
+    margin-right: 5px;
+}
+
+#listaItens{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    
+}
+#itensAdicionados{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+    
+    
+}
+
+.logout-btn {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block; /* Garante que todo o link seja clicável */
+    padding: 15px 20px;
+    font-family: "Helvetica Neue",;
+    font-weight: bold;
+
+    
+    
+    
+}
 .logout-btn:hover {
     background-color: rgb(125, 199, 96);
 }
 
-.logout-btn {
-    background-color: black;
-}
-
-/* Ícones */
-i {
-    margin-right: 5px;
-    font-size: 1em;
-}
-
-/* Áreas de conteúdo principal */
-.inicial {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 15px;
-    text-align: center;
-}
-
-.inicial h3 {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 2.2rem;
-    color: rgb(80, 197, 34);
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.inicial p {
-    font-family: Helvetica, sans-serif;
-    font-size: 1.2rem;
-    max-width: 800px;
-    margin-bottom: 15px;
-}
-
-/* Estilos de formulário responsivos */
-.formulario {
-    text-align: center;
-    padding: 0 15px;
-}
-
-.formulario h3 {
-    color: rgb(83, 189, 42);
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-}
-
-form {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 4px solid gray;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.form-group {
-    margin-bottom: 20px;
-    background-color: rgb(190, 188, 188);
-    padding: 15px;
-    border-radius: 8px;
-}
-
-label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 8px;
-    font-size: 1rem;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="date"],
-input[type="number"],
-select,
-textarea {
-    width: 100%;
-    max-width: 500px;
-    padding: 12px;
-    border: 2px solid grey;
-    border-radius: 4px;
-    box-sizing: border-box;
-    text-align: center;
-    font-size: 1rem;
-    margin: 0 auto;
-    display: block;
-}
-
-textarea {
-    resize: vertical;
-    min-height: 100px;
-    text-align: left;
-}
-
-button {
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    background-color: #007bff;
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    min-width: 120px;
-}
-
-button:hover {
-    background-color: rgb(80, 197, 34);
-}
-
-/* Itens de lista responsivos */
-#listaItens {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px;
-    margin: 20px 0;
-}
-
-#itensAdicionados {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-    max-width: 600px;
+ul{
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-#itensAdicionados li {
-    background-color: #e9ecef;
-    padding: 10px;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
+form {
+max-width: 600px;
+margin: 20px auto;
+padding: 20px;
+border: 4px solid gray;
+border-radius: 8px;
+background-color: #f9f9f9;
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.form-group {
+margin-bottom: 20px;
+background-color: rgb(190, 188, 188);
+padding: 15px;    
+}
+label {
+display: block;
+font-weight: bold;
+margin-bottom: 5px;
+
+
+}
+input[type="text"],
+select {
+width: 80%;
+padding: 10px;
+border: 2px solid grey;
+border-radius: 4px;
+box-sizing: border-box;
+text-align: center;
+}
+button {
+padding: 10px 15px;
+border: none;
+border-radius: 4px;
+background-color: #007bff;
+color: white;
+font-size: 16px;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+button:hover {
+background-color: rgb(80, 197, 34);
 }
 
-/* Imagem de fundo responsiva */
-.corpo {
-    background-image: url(filial-df.jpg);
-    min-height: 300px;
-    height: 50vh;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    opacity: 0.9;
-    border-radius: 15px;
-    margin: 10px;
-}
-
-/* Botões de rádio e checkboxes */
-input[type="radio"],
-input[type="checkbox"] {
-    width: auto;
-    margin: 0 8px;
-    transform: scale(1.2);
-}
-
-/* Breakpoints responsivos */
-@media (max-width: 1200px) {
-    .menu ul {
-        gap: 20px;
-    }
-    
-    form {
-        max-width: 90%;
-    }
-    
-    .header h1 {
-        font-size: 2.2rem;
-    }
-    
-    .header img {
-        width: 80px;
-    }
-}
 
 @media (max-width: 768px) {
-    .header {
-        min-height: 80px;
-        margin: 5px;
-        padding: 10px;
-    }
+form {
+padding: 15px;
+}
+button {
+width: 100%;
+}
+}
+
+p{
+
+font-family: Helvetica, sans-serif;    
+font-size: 18px;
+
+
+}
+
+h3{
+    font-family: Georgia, 'Times New Roman', Times, serif;;
+    font-size: 27px;
+    color:rgb(80, 197, 34) ;
+    font-weight: bold;
+   
+}
+
+.corpo{
+    background-image: url(filial-df.jpg);
+    height: 490px;
+    width: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.9;
+    border-radius: 15px;
     
-    .header h1 {
-        font-size: 1.8rem;
-        flex-direction: column;
-        gap: 5px;
-    }
+   
     
-    .header img {
-        width: 70px;
-    }
-    
-    .menu {
-        margin: 5px;
-        padding: 10px;
-    }
-    
-    .menu ul {
-        flex-direction: column;
-        gap: 10px;
-        align-items: stretch;
-    }
-    
-    .menu a,
-    .logout-btn {
-        text-align: center;
-        padding: 15px;
-        font-size: 0.9rem;
-    }
-    
-    form {
-        margin: 10px;
-        padding: 15px;
-        border-width: 2px;
-    }
-    
-    .form-group {
-        padding: 10px;
-    }
-    
-    input[type="text"],
-    input[type="email"],
-    input[type="password"],
-    input[type="date"],
-    input[type="number"],
-    select,
-    textarea {
-        max-width: 100%;
-        font-size: 0.9rem;
-    }
-    
-    button {
-        width: 100%;
-        margin: 5px 0;
-        font-size: 0.9rem;
-    }
-    
-    .inicial {
-        padding: 15px;
-        margin: 5px;
-    }
-    
-    .inicial h3 {
-        font-size: 1.8rem;
-    }
-    
-    .inicial p {
-        font-size: 1rem;
-    }
-    
-    .formulario h3 {
-        font-size: 1.3rem;
-    }
-    
-    .corpo {
-        height: 40vh;
-        min-height: 250px;
-    }
-    
-    #itensAdicionados li {
-        flex-direction: column;
+}
+
+#data_requisicao{
         text-align: center;
     }
-}
-
-@media (max-width: 480px) {
-    .header {
-        min-height: 70px;
-        border-radius: 10px;
-    }
     
-    .header h1 {
-        font-size: 1.5rem;
-    }
-    
-    .header img {
-        width: 60px;
-    }
-    
-    .menu {
-        border-radius: 10px;
-    }
-    
-    .menu ul {
-        padding: 0;
-    }
-    
-    .menu a,
-    .logout-btn {
-        padding: 12px;
-        font-size: 0.8rem;
-    }
-    
-    form {
-        border-radius: 5px;
-        padding: 10px;
-    }
-    
-    .form-group {
-        margin-bottom: 15px;
-        padding: 8px;
-    }
-    
-    input[type="text"],
-    input[type="email"],
-    input[type="password"],
-    input[type="date"],
-    input[type="number"],
-    select,
-    textarea {
-        padding: 10px;
-        font-size: 0.8rem;
-    }
-    
-    label {
-        font-size: 0.9rem;
-    }
-    
-    button {
-        font-size: 0.8rem;
-    }
-    
-    .inicial {
-        padding: 10px;
-    }
-    
-    .inicial h3 {
-        font-size: 1.5rem;
-    }
-    
-    .inicial p {
-        font-size: 0.9rem;
-    }
-    
-    .formulario h3 {
-        font-size: 1.1rem;
-    }
-    
-    .corpo {
-        height: 35vh;
-        min-height: 200px;
-        border-radius: 10px;
-    }
-}
-
-@media (max-width: 320px) {
-    .header h1 {
-        font-size: 1.2rem;
-    }
-    
-    .header img {
-        width: 50px;
-    }
-    
-    .menu a,
-    .logout-btn {
-        font-size: 0.7rem;
-        padding: 10px;
-    }
-    
-    .inicial h3 {
-        font-size: 1.3rem;
-    }
-    
-    .inicial p {
-        font-size: 0.8rem;
-    }
-    
-    .formulario h3 {
-        font-size: 1rem;
-    }
-}
-
-/* Classes utilitárias */
-.text-center {
-    text-align: center;
-}
-
-.hidden {
-    display: none;
-}
-
-/* Garantir que imagens sejam responsivas */
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Melhorias de acessibilidade */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-}
-
-/* Suporte para alto contraste */
-@media (prefers-contrast: high) {
-    .header {
-        border: 2px solid white;
-    }
-    
-    .menu a,
-    .logout-btn {
-        border: 1px solid white;
-    }
-}
